@@ -1,0 +1,14 @@
+postgres:
+  image: postgres
+  container_name: postgres
+  ports:
+   - "5432:5432"
+statistics:
+ image: imperfection/statistics
+ links:
+  - postgres
+ environment:
+   - FROM=2018-05-01 00:00:00
+   - TO=2018-05-02 00:00:00
+   - LOGIN=Aaksenov
+   - PASSWORD=
